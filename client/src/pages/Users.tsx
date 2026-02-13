@@ -80,7 +80,7 @@ export default function Users(): JSX.Element {
 
   async function handleDeleteUser(id: number): Promise<void> {
     if (id === currentUser?.id) {
-      setFormError("You cannot delete your own account");
+      alert("You cannot delete your own account");
       return;
     }
 
