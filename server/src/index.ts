@@ -9,6 +9,7 @@ import './models';
 
 // Import routes
 import authRoutes from './modules/auth/routes';
+import userRoutes from './modules/users/routes';
 import productRoutes from './modules/products/routes';
 import salesRoutes from './modules/sales/routes';
 import stockRoutes from './modules/stock/routes';
@@ -24,6 +25,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/sales', salesRoutes);
 app.use('/api/stock', stockRoutes);

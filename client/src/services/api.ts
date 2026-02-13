@@ -4,6 +4,9 @@ import type {
   AuthResponse,
   LoginRequest,
   RegisterRequest,
+  User,
+  UpdateUserRequest,
+  ChangePasswordRequest,
   Product,
   CreateProductRequest,
   UpdateProductRequest,
@@ -51,6 +54,15 @@ function unwrap<T>(response: { data: ApiResponse<T> }): T {
 export const authApi = {
   login: (data: LoginRequest) => api.post('/auth/login', data).then(unwrap<AuthResponse>),
   register: (data: RegisterRequest) => api.post('/auth/register', data).then(unwrap<AuthResponse>),
+};
+
+// --- Users ---
+export const userApi = {
+  getAll: () => api.get('/users').then(unwrap<User[]>),
+  getById: (id: number) => api.get(`/users/${id}`).then(unwrap<User>),
+  update: (id: number, data: UpdateUserRequest) => api.put(`/users/${id}`, data).then(unwrap<User>),
+  changePassword: (id: number, data: ChangePasswordRequest) => api.put(`/users/${id}/password`, data).then(unwrap<null>),
+  delete: (id: number) => api.delete(`/users/${id}`).then(unwrap<null>),
 };
 
 // --- Products ---

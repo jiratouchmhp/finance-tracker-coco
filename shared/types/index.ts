@@ -40,6 +40,15 @@ export interface AuthResponse {
   user: User;
 }
 
+export interface UpdateUserRequest {
+  username?: string;
+  role?: UserRole;
+}
+
+export interface ChangePasswordRequest {
+  newPassword: string;
+}
+
 // --- Product ---
 
 export interface Product {

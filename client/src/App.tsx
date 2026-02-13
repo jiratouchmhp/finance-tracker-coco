@@ -8,6 +8,7 @@ import Sales from './pages/Sales';
 import Stock from './pages/Stock';
 import Expenses from './pages/Expenses';
 import Products from './pages/Products';
+import Users from './pages/Users';
 import { JSX } from 'react';
 
 export default function App(): JSX.Element {
@@ -36,6 +37,14 @@ export default function App(): JSX.Element {
           element={
             <ProtectedRoute requiredRole="OWNER">
               <Products />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/users"
+          element={
+            <ProtectedRoute requiredRole="OWNER">
+              <Users />
             </ProtectedRoute>
           }
         />
