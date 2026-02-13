@@ -1,0 +1,22 @@
+{
+  "name": "finance-tracker-coco",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Coconut water shop finance tracker — daily/monthly revenue, cost tracking, fraud detection, profit dashboard",
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspace=shared && npm run build --workspace=server && npm run build --workspace=client",
+    "lint": "concurrently \"npm run lint --workspace=server\" \"npm run lint --workspace=client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  }
+}
