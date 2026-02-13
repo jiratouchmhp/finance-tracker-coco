@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { to: '/stock', label: 'Stock', icon: '📦' },
   { to: '/expenses', label: 'Expenses', icon: '💸' },
   { to: '/products', label: 'Products', icon: '🥥', ownerOnly: true },
+  { to: '/users', label: 'Users', icon: '👥', ownerOnly: true },
 ];
 
 export function Layout(): JSX.Element {
